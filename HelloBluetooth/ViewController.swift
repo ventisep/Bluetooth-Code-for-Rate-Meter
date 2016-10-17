@@ -4,11 +4,12 @@ class ViewController: UIViewController {
     var StrokeMeter: StrokeMeterIO!
 
     @IBOutlet weak var ledToggleButton: UIButton!
+    @IBOutlet weak var accelerationLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        StrokeMeter = StrokeMeterIO(serviceUUID: "19B10010-E8F2-537E-4F6C-D104768A1214", delegate: self)
+        StrokeMeter = StrokeMeterIO(serviceUUID: "E95D0753-251D-470A-A062-FA1922DFA9A8", delegate: self)
     }
 
     @IBAction func ledToggleButtonDown(_ sender: UIButton) {
@@ -25,10 +26,6 @@ class ViewController: UIViewController {
 
 extension ViewController: StrokeMeterIODelegate {
     func didReceiveValue(_ StrokeMeterIO: StrokeMeterIO, value: Int8) {
-        if value > 0 {
-            view.backgroundColor = UIColor.yellow
-        } else {
-            view.backgroundColor = UIColor.black
-        }
+        accelerationLabel.text = String(value)
     }
 }
