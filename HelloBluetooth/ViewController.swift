@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        StrokeMeter = StrokeMeterIO(serviceUUID: "E95D0753-251D-470A-A062-FA1922DFA9A8", delegate: self)
+        StrokeMeter = StrokeMeterIO(serviceUUID: "E95D0000-251D-470A-A062-FA1922DFA9A8", delegate: self)
     }
 
     @IBAction func ledToggleButtonDown(_ sender: UIButton) {
